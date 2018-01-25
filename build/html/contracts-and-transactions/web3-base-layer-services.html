@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Web3基础层服务 &mdash; 以太坊Homestead文档 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="以太坊Homestead文档 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="合约和交易" href="index.html"/>
+        <link rel="next" title="常见问题" href="../frequently-asked-questions/frequently-asked-questions.html"/>
+        <link rel="prev" title="VM Tests" href="ethereum-tests/vm_tests/index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 以太坊Homestead文档
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ethereum-clients/index.html">以太坊客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../connecting-to-clients/index.html">连接到以太坊客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../account-management.html">账户管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ether.html">以太币</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">以太坊网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mining.html">挖矿</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">合约和交易</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="account-types-gas-and-transactions.html">账户类型、气和交易</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contracts.html">合约</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing-contracts-and-transactions.html">访问合约和交易</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mix.html">Mix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer-tools.html">Dapps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer-tools.html#id3">开发工具</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum-tests/index.html">Ethereum Tests</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Web3基础层服务</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#swarm">Swarm - 去中心化数据存储和分发</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#whisper">Whisper - 去中心化消息</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">名称注册</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">合约注册</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../frequently-asked-questions/frequently-asked-questions.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">术语表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">Homestead文档计划</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">以太坊Homestead文档</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">合约和交易</a> &raquo;</li>
+        
+      <li>Web3基础层服务</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/contracts-and-transactions/web3-base-layer-services.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="web3">
+<h1>Web3基础层服务<a class="headerlink" href="#web3" title="Permalink to this headline">¶</a></h1>
+<p>作为以太坊区块链的补充，使web应用程序的很多其他重要部分去中心化的更多组件也被开发了出来。</p>
+<img alt="../_images/ethereum-protocols.png" src="../_images/ethereum-protocols.png" />
+<div class="section" id="swarm">
+<h2>Swarm - 去中心化数据存储和分发<a class="headerlink" href="#swarm" title="Permalink to this headline">¶</a></h2>
+<p>Swarm是一个点到点数据共享网络，文件会由它们的内容哈希作为地址。像Bittorrent一样，可以从很多节点同时获取数据，每个节点只提供一部分数据，从任何地点都可以访问。这种方法使不使用任何服务器就可以分发数据，数据访问也不依赖位置。</p>
+<p>网络中的其他节点能够被激励来复制和存储数据，从而免除当原始节点没有接入网络时对托管服务的需要。</p>
+</div>
+<div class="section" id="whisper">
+<h2>Whisper - 去中心化消息<a class="headerlink" href="#whisper" title="Permalink to this headline">¶</a></h2>
+<p>一个允许节点间直接进行私密、安全通信的协议。</p>
+<hr class="docutils" />
+<p>而且，一些标准的合约也已经被创建出来，使开发和使用分布式应用程序变得简单：</p>
+</div>
+<div class="section" id="id1">
+<h2>名称注册<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>由于Dapp可以被保存到任何地方，包含Swarm网络，名称注册可以将名称和它们的内容或地址进行映射。这其实就是一种去中心化的域名系统（DNS）。</p>
+<p>参考 <a class="reference external" href="https://github.com/ethereum/EIPs/issues/26">https://github.com/ethereum/EIPs/issues/26</a></p>
+</div>
+<div class="section" id="id2">
+<h2>合约注册<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>要发布特定合约的源代码，就必须要映射到它的地址。合约注册服务保存了这些映射。用户可以查找这个映射来校验合约代码。</p>
+<p>参考</p>
+<ul class="simple">
+<li>global registrar code</li>
+<li>namereg API</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../frequently-asked-questions/frequently-asked-questions.html" class="btn btn-neutral float-right" title="常见问题" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ethereum-tests/vm_tests/index.html" class="btn btn-neutral" title="VM Tests" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Ethereum community.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

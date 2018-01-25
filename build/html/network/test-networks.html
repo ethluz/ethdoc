@@ -1,0 +1,594 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>测试网络 &mdash; 以太坊Homestead文档 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="以太坊Homestead文档 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="以太坊网络" href="index.html"/>
+        <link rel="next" title="挖矿" href="../mining.html"/>
+        <link rel="prev" title="连接到网络" href="connecting-to-the-network.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 以太坊Homestead文档
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ethereum-clients/index.html">以太坊客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../connecting-to-clients/index.html">连接到以太坊客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../account-management.html">账户管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ether.html">以太币</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">以太坊网络</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="connecting-to-the-network.html">连接到网络</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">测试网络</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#morden">Morden测试网络</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">使用方法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">详情</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">获得Morden测试网络的以太币</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">配置一个本地的测试网络</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#custom-networks-eth">eth（C++客户端）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">geth（Go客户端）</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#genesis">Genesis文件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">针对私有网络的命令行参数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geth">启动 <code class="docutils literal"><span class="pre">geth</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">给你的账户预分配以太币</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mining.html">挖矿</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contracts-and-transactions/index.html">合约和交易</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frequently-asked-questions/frequently-asked-questions.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">术语表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">Homestead文档计划</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">以太坊Homestead文档</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">以太坊网络</a> &raquo;</li>
+        
+      <li>测试网络</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/network/test-networks.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="test-networks">
+<span id="id1"></span><h1>测试网络<a class="headerlink" href="#test-networks" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="morden">
+<h2>Morden测试网络<a class="headerlink" href="#morden" title="Permalink to this headline">¶</a></h2>
+<p>Morden是一个公开的以太坊备选测试网络。它将在以太坊的Frontier到Homestead里程碑期间一直存在。</p>
+<div class="section" id="id2">
+<h3>使用方法<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="eth-c">
+<h4>eth（C++客户端）<a class="headerlink" href="#eth-c" title="Permalink to this headline">¶</a></h4>
+<p>从0.9.93及以上版本支持，可以在启动客户端时使用 <code class="docutils literal"><span class="pre">--morden</span></code> 以选择测试网络。例如：</p>
+<div class="code Console highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">eth</span> <span class="o">--</span><span class="n">morden</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pyethapp-python">
+<h4>PyEthApp（Python客户端）<a class="headerlink" href="#pyethapp-python" title="Permalink to this headline">¶</a></h4>
+<p>PyEthApp从1.0.5版本开始支持Morden网络：</p>
+<div class="code Console highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">pyethapp</span> <span class="o">--</span><span class="n">profile</span> <span class="n">morden</span> <span class="n">run</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="geth-go">
+<h4>geth（Go客户端）<a class="headerlink" href="#geth-go" title="Permalink to this headline">¶</a></h4>
+<div class="code Console highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">geth</span> <span class="o">--</span><span class="n">testnet</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>详情<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>除了以下参数外，所有参数都与以太坊主网络相同：
+All parameters are the same as the main Ethereum network except:</p>
+<ul class="simple">
+<li>网络名称： <strong>Morden</strong></li>
+<li>网络标识： 2</li>
+<li>genesis.json （下边会给出）</li>
+<li>初始账户Nonce（ <code class="docutils literal"><span class="pre">IAN</span></code> ）为2^20（而不是像之前的网络那样为0）<ul>
+<li>在状态前缀树中的所有账户Nonce均 &gt;= <code class="docutils literal"><span class="pre">IAN</span></code> 。</li>
+<li>每当一个账户被加入状态前缀树时，Nonce都会被初始化为 = <code class="docutils literal"><span class="pre">IAN</span></code> 。</li>
+</ul>
+</li>
+<li>初始区块哈希：
+<code class="docutils literal"><span class="pre">0cd786a2425d16f152c658316c423e6ce1181e15c3295826d7c9904cba9ce303</span></code></li>
+<li>初始状态前缀树根：
+<code class="docutils literal"><span class="pre">f3f4696bbf3b3b07775128eb7a3763279a394e382130f27c21e70233e04946a9</span></code></li>
+</ul>
+<div class="section" id="mordengenesis-json">
+<h4>Morden的genesis.json<a class="headerlink" href="#mordengenesis-json" title="Permalink to this headline">¶</a></h4>
+<div class="code JSON highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+                <span class="s2">&quot;nonce&quot;</span><span class="p">:</span> <span class="s2">&quot;0x00006d6f7264656e&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;difficulty&quot;</span><span class="p">:</span> <span class="s2">&quot;0x20000&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;mixhash&quot;</span><span class="p">:</span> <span class="s2">&quot;0x00000000000000000000000000000000000000647572616c65787365646c6578&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;coinbase&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;0x00&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;parentHash&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;extraData&quot;</span><span class="p">:</span> <span class="s2">&quot;0x&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;gasLimit&quot;</span><span class="p">:</span> <span class="s2">&quot;0x2FEFD8&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;alloc&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                <span class="s2">&quot;0000000000000000000000000000000000000001&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;balance&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span> <span class="p">},</span>
+                                <span class="s2">&quot;0000000000000000000000000000000000000002&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;balance&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span> <span class="p">},</span>
+                                <span class="s2">&quot;0000000000000000000000000000000000000003&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;balance&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span> <span class="p">},</span>
+                                <span class="s2">&quot;0000000000000000000000000000000000000004&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;balance&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span> <span class="p">},</span>
+                                <span class="s2">&quot;102e61f5d8f9bc71d0ad4a084df4e65e05ce0e1c&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;balance&quot;</span><span class="p">:</span> <span class="s2">&quot;1606938044258990275541962092341162602522202993782792835301376&quot;</span> <span class="p">}</span>
+                <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>获得Morden测试网络的以太币<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>有两种途径可以获得Morden测试网络的以太币：</p>
+<ul class="simple">
+<li>用你的CPU/GPU来挖矿。（参考 <a class="reference internal" href="../mining.html#mining"><span class="std std-ref">挖矿</span></a> ）</li>
+<li>使用 <a class="reference external" href="https://zerogox.com/ethereum/wei_faucet">Ethereum wei faucet</a> 。</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h1>配置一个本地的测试网络<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="custom-networks-eth">
+<span id="id6"></span><h2>eth（C++客户端）<a class="headerlink" href="#custom-networks-eth" title="Permalink to this headline">¶</a></h2>
+<p>可以使用 –genesis 和 –config 参数来连接或创建一个新的网络。</p>
+<div class="code Console highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">eth</span> <span class="o">--</span><span class="n">private</span> <span class="s2">&quot;customChain&quot;</span> <span class="o">--</span><span class="n">config</span> <span class="n">config</span><span class="o">.</span><span class="n">json</span> <span class="o">--</span><span class="n">genesis</span> <span class="n">genesis</span><span class="o">.</span><span class="n">json</span>
+</pre></div>
+</div>
+<p>也可以同时使用 –config 和 –genesis 。在这种情况下，由 –config 提供的初始区块描述会被 –genesis 选项的设定所覆盖。</p>
+<div class="code Console highlight-default"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">private</span> <span class="o">//</span><span class="n">defines</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">custom</span> <span class="n">chain</span> <span class="p">(</span><span class="n">optional</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="code Console highlight-default"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">config</span> <span class="o">&lt;</span><span class="n">filename</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>&lt;filename&gt; 包含了一个网络信息的JSON描述：</p>
+<ul class="last">
+<li><p class="first">sealEngine （挖矿引擎）</p>
+<blockquote>
+<div><p>“Ethash” 是以太坊工作量证明引擎（被当前网络使用）。</p>
+<p>“NoProof” 挖矿时不需要工作量证明。</p>
+</div></blockquote>
+</li>
+<li><p class="first">params （网络的一般信息，比如minGasLimit、minimumDifficulty、blockReward、networkID）</p>
+</li>
+<li><p class="first">genesis （初始区块描述）</p>
+</li>
+<li><p class="first">accounts （设置账户/合约的初始状态）</p>
+</li>
+</ul>
+</div>
+<p>这里是个Config样例（使用Olympic网络）：</p>
+<div class="code JSON highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;sealEngine&quot;</span><span class="p">:</span> <span class="s2">&quot;Ethash&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;accountStartNonce&quot;</span><span class="p">:</span> <span class="s2">&quot;0x00&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;frontierCompatibilityModeLimit&quot;</span><span class="p">:</span> <span class="s2">&quot;0xffffffff&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;maximumExtraDataSize&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0400&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;tieBreakingGas&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">&quot;minGasLimit&quot;</span><span class="p">:</span> <span class="s2">&quot;125000&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;gasLimitBoundDivisor&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0400&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;minimumDifficulty&quot;</span><span class="p">:</span> <span class="s2">&quot;0x020000&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;difficultyBoundDivisor&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0800&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;durationLimit&quot;</span><span class="p">:</span> <span class="s2">&quot;0x08&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;blockReward&quot;</span><span class="p">:</span> <span class="s2">&quot;0x14D1120D7B160000&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;registrar&quot;</span><span class="p">:</span> <span class="s2">&quot;5e70c0bbcd5636e0f9f9316e9f8633feb64d4050&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;networkID&quot;</span> <span class="p">:</span> <span class="s2">&quot;0x0&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;genesis&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;nonce&quot;</span><span class="p">:</span> <span class="s2">&quot;0x000000000000002a&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;difficulty&quot;</span><span class="p">:</span> <span class="s2">&quot;0x20000&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;mixHash&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;0x00&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;parentHash&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;extraData&quot;</span><span class="p">:</span> <span class="s2">&quot;0x&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;gasLimit&quot;</span><span class="p">:</span> <span class="s2">&quot;0x2fefd8&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;accounts&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;0000000000000000000000000000000000000001&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;wei&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;precompiled&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ecrecover&quot;</span><span class="p">,</span> <span class="s2">&quot;linear&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;base&quot;</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span> <span class="s2">&quot;word&quot;</span><span class="p">:</span> <span class="mi">0</span> <span class="p">}</span> <span class="p">}</span> <span class="p">},</span>
+            <span class="s2">&quot;0000000000000000000000000000000000000002&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;wei&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;precompiled&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;sha256&quot;</span><span class="p">,</span> <span class="s2">&quot;linear&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;base&quot;</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span> <span class="s2">&quot;word&quot;</span><span class="p">:</span> <span class="mi">12</span> <span class="p">}</span> <span class="p">}</span> <span class="p">},</span>
+            <span class="s2">&quot;0000000000000000000000000000000000000003&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;wei&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;precompiled&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ripemd160&quot;</span><span class="p">,</span> <span class="s2">&quot;linear&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;base&quot;</span><span class="p">:</span> <span class="mi">600</span><span class="p">,</span> <span class="s2">&quot;word&quot;</span><span class="p">:</span> <span class="mi">120</span> <span class="p">}</span> <span class="p">}</span> <span class="p">},</span>
+            <span class="s2">&quot;0000000000000000000000000000000000000004&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;wei&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;precompiled&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;identity&quot;</span><span class="p">,</span> <span class="s2">&quot;linear&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;base&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;word&quot;</span><span class="p">:</span> <span class="mi">3</span> <span class="p">}</span> <span class="p">}</span> <span class="p">},</span>
+            <span class="s2">&quot;dbdbdb2cbd23b783741e8d7fcf51e459b497e4a6&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;wei&quot;</span><span class="p">:</span> <span class="s2">&quot;1606938044258990275541962092341162602522202993782792835301376&quot;</span> <span class="p">},</span>
+            <span class="s2">&quot;e6716f9544a56c530d868e4bfbacb172315bdead&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;wei&quot;</span><span class="p">:</span> <span class="s2">&quot;1606938044258990275541962092341162602522202993782792835301376&quot;</span> <span class="p">},</span>
+            <span class="s2">&quot;b9c015918bdaba24b4ff057a92a3873d6eb201be&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;wei&quot;</span><span class="p">:</span> <span class="s2">&quot;1606938044258990275541962092341162602522202993782792835301376&quot;</span> <span class="p">},</span>
+            <span class="s2">&quot;1a26338f0d905e295fccb71fa9ea849ffa12aaf4&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;wei&quot;</span><span class="p">:</span> <span class="s2">&quot;1606938044258990275541962092341162602522202993782792835301376&quot;</span> <span class="p">},</span>
+            <span class="s2">&quot;2ef47100e0787b915105fd5e3f4ff6752079d5cb&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;wei&quot;</span><span class="p">:</span> <span class="s2">&quot;1606938044258990275541962092341162602522202993782792835301376&quot;</span> <span class="p">},</span>
+            <span class="s2">&quot;cd2a3d9f938e13cd947ec05abc7fe734df8dd826&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;wei&quot;</span><span class="p">:</span> <span class="s2">&quot;1606938044258990275541962092341162602522202993782792835301376&quot;</span> <span class="p">},</span>
+            <span class="s2">&quot;6c386a4b26f73c802f34673f7248bb118f97424a&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;wei&quot;</span><span class="p">:</span> <span class="s2">&quot;1606938044258990275541962092341162602522202993782792835301376&quot;</span> <span class="p">},</span>
+            <span class="s2">&quot;e4157b34ea9615cfbde6b4fda419828124b70c78&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;wei&quot;</span><span class="p">:</span> <span class="s2">&quot;1606938044258990275541962092341162602522202993782792835301376&quot;</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="code Console highlight-default"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">genesis</span> <span class="o">&lt;</span><span class="n">filename</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">optional</span> <span class="k">if</span> <span class="n">the</span> <span class="n">config</span> <span class="n">option</span> <span class="ow">is</span> <span class="n">provided</span> <span class="ow">and</span> <span class="n">contains</span> <span class="n">the</span> <span class="n">genesis</span> <span class="n">description</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">&lt;filename&gt; 包含了一个初始区块的JSON描述，内容与‘config’参数提供的genesis字段相同：</p>
+</div>
+<div class="code JavaScript highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+              <span class="s2">&quot;nonce&quot;</span><span class="p">:</span> <span class="s2">&quot;0x000000000000002a&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;difficulty&quot;</span><span class="p">:</span> <span class="s2">&quot;0x20000&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;mixHash&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;0x00&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;parentHash&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;extraData&quot;</span><span class="p">:</span> <span class="s2">&quot;0x&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;gasLimit&quot;</span><span class="p">:</span> <span class="s2">&quot;0x2fefd8&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>geth（Go客户端）<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>在一个私有测试网络中，你可以通过预生成或者自己挖矿的方式获得以太币。这是个尝试以太坊的性价比最高的方式，因为你不必自己在最新的测试网络中挖矿或者去寻找以太币来源。</p>
+<dl class="docutils">
+<dt>需要在私有链中指定的主要配置是：</dt>
+<dd><ul class="first last simple">
+<li>自定义Genesis文件（即初始区块信息，译者注）</li>
+<li>自定义数据目录</li>
+<li>自定义网络ID</li>
+<li>（推荐）禁止节点发现</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="genesis">
+<h3>Genesis文件<a class="headerlink" href="#genesis" title="Permalink to this headline">¶</a></h3>
+<p>初始区块（创世区块）是区块链的开始 - 即第一个区块，区块0，并且是唯一一个没有前导区块的区块。基于协议，不会有其他节点批准你的区块链版本，除非它们也拥有同样的初始区块。所以你想创建多少私有测试网络就可以创建多少。</p>
+<p><code class="file docutils literal"><span class="pre">CustomGenesis.json</span></code></p>
+<div class="highlight-JSON"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;nonce&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0000000000000042&quot;</span><span class="p">,</span>     <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;parentHash&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;extraData&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0&quot;</span><span class="p">,</span>     <span class="nt">&quot;gasLimit&quot;</span><span class="p">:</span> <span class="s2">&quot;0x8000000&quot;</span><span class="p">,</span>     <span class="nt">&quot;difficulty&quot;</span><span class="p">:</span> <span class="s2">&quot;0x400&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;mixhash&quot;</span><span class="p">:</span> <span class="s2">&quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;coinbase&quot;</span><span class="p">:</span> <span class="s2">&quot;0x3333333333333333333333333333333333333333&quot;</span><span class="p">,</span>     <span class="nt">&quot;alloc&quot;</span><span class="p">:</span> <span class="p">{</span>     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>保存一个文件叫做 <code class="file docutils literal"><span class="pre">CustomGenesis.json</span></code> ，它将用来初始化你的geth节点，通过以下命令：</p>
+<p><code class="docutils literal"><span class="pre">geth</span> <span class="pre">init</span> <span class="pre">/path/to/CustomGenesis.json</span></code></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">geth默认会使用与公链主网络相同的目录。所以你需要使用 <code class="docutils literal"><span class="pre">--datadir</span></code> 来给测试网络指定一个单独的目录以避免公链数据被重置。</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>针对私有网络的命令行参数<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>有一些命令行选项（也可以叫做“标志”）是用来确保你的网络保持私有状态的。我们已经看过了genesis标志，但我们还需要一些。请注意，以下命令适用于geth以太坊客户端。</p>
+<p><code class="docutils literal"><span class="pre">--nodiscover</span></code></p>
+<p>使用这个选项以确保除非其他人手工添加你的节点，否则你的节点不会被自动发现。如果其它某个陌生人恰好使用了跟你同样的genesis文件和网络id，不使用这个选项，你的节点可能会被无端加入他们创建的区块链网络中。</p>
+<p><code class="docutils literal"><span class="pre">--maxpeers</span> <span class="pre">0</span></code></p>
+<p>如果你不希望其他人连接到你的区块链，请使用这个选项。当然，如果你知道有多少节点会连接到你的网络，你也可以调整这个数字。</p>
+<p><code class="docutils literal"><span class="pre">--rpc</span></code></p>
+<p>这个选项会在你的节点上打开RPC接口。在Geth中这个选项是缺省打开的。</p>
+<p><code class="docutils literal"><span class="pre">--rpcapi</span> <span class="pre">&quot;db,eth,net,web3&quot;</span></code></p>
+<p>这个选项指定了哪些API可以通过RPC方式使用。缺省情况下，Geth允许web3接口。</p>
+<p><strong>重要：请注意，通过RPC/IPC方式提供API接口，将允许能访问到接口的所有人使用相应API（比如dapp’s，即去中心化应用）。请慎重地打开API。缺省地，Geth客户端允许通过IPC使用所有API，而通过RPC则只能使用db、eth、net和web3的API。</strong></p>
+<p><code class="docutils literal"><span class="pre">--rpcport</span> <span class="pre">&quot;8080&quot;</span></code></p>
+<p>8080可以改为任何你网络中允许的端口。Geth的缺省端口是8080。</p>
+<p><code class="docutils literal"><span class="pre">--rpccorsdomain</span> <span class="pre">&quot;http://chriseth.github.io/browser-solidity/&quot;</span></code></p>
+<p>这个选项指定了哪些URL可以连接到你的节点来执行RPC客户端任务。请谨慎使用这个选项，指定一个特定的URL，而不是使用通配符（*）来允许所有URL连接到你的RPC实例。</p>
+<p><code class="docutils literal"><span class="pre">--datadir</span> <span class="pre">&quot;/home/TestChain1&quot;</span></code></p>
+<p>这个选项是指定你的私有链数据的存储目录。请选择你的以太坊客户端主目录以外的目录。</p>
+<p><code class="docutils literal"><span class="pre">--port</span> <span class="pre">&quot;30303&quot;</span></code></p>
+<p>这是“网络监听端口”，你可以用它来手工连接其他节点。</p>
+<p><code class="docutils literal"><span class="pre">--identity</span> <span class="pre">&quot;TestnetMainNode&quot;</span></code></p>
+<p>这将会给你节点加一个标识，以使它更容易的被标识在节点列表中。</p>
+<p>以下是一个这些标识如何在网络中显示的例子。</p>
+</div>
+<div class="section" id="geth">
+<h3>启动 <code class="docutils literal"><span class="pre">geth</span></code><a class="headerlink" href="#geth" title="Permalink to this headline">¶</a></h3>
+<p>当你创建了自定义初始区块的JSON文件，并为你的区块链创建了数据目录之后，就可以使用以下命令访问geth：</p>
+<div class="highlight-Console"><div class="highlight"><pre><span></span><span class="go">geth --identity &quot;MyNodeName&quot; --rpc --rpcport &quot;8080&quot; --rpccorsdomain &quot;*&quot; --datadir &quot;C:\chains\TestChain1&quot; --port &quot;30303&quot; --nodiscover --rpcapi &quot;db,eth,net,web3&quot; --networkid 1999 init /path/to/CustomGenesis.json</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">请把相关参数修改为适合你自己的配置。</p>
+</div>
+<p>它将会初始化你的初始区块。键入以下命令，就可以与geth进行交互了：</p>
+<div class="highlight-Console"><div class="highlight"><pre><span></span><span class="go">geth --identity &quot;MyNodeName&quot; --rpc --rpcport &quot;8080&quot; --rpccorsdomain &quot;*&quot; --datadir &quot;C:\chains\TestChain1&quot; --port &quot;30303&quot; --nodiscover --rpcapi &quot;db,eth,net,web3&quot; --networkid 1999 console</span>
+</pre></div>
+</div>
+<p>你每次要访问你的自定义链之前，你都需要使用自定义命令启动geth实例。如果你只用“geth”命令启动，它不会记住你的所有自定义选项。</p>
+<p>javascript命令行中可使用的完整方法一览，请参考 <a class="reference external" href="https://github.com/ethereum/go-ethereum/wiki/JavaScript-Console">the geth wiki on github</a> 。</p>
+<p>如果你已经运行了一个geth节点，你可以将其他geth实例与它联结在一起：</p>
+<div class="highlight-Console"><div class="highlight"><pre><span></span><span class="go">geth attach</span>
+</pre></div>
+</div>
+<p>现在你需要在测试网路中初始化一个新账户，并把它作为你的etherbase（接收挖矿奖励的地址）。</p>
+<p>在javascript控制台输入：</p>
+<div class="highlight-Console"><div class="highlight"><pre><span></span><span class="go">personal.newAccount(&quot;password&quot;)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">把password替换为你的密码。</p>
+</div>
+<p>现在将它设定为etherbase：</p>
+<div class="highlight-Console"><div class="highlight"><pre><span></span><span class="go">miner.setEtherbase(personal.listAccounts[0])</span>
+</pre></div>
+</div>
+<p>如果成功，命令行会打印“true”。</p>
+<p>最终你就可以开始挖矿了：</p>
+<div class="highlight-Console"><div class="highlight"><pre><span></span><span class="go">miner.start()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>给你的账户预分配以太币<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>一个“0x400”的难度将允许你在你的私有测试链上快速挖出以太币。在你创建了你的链并开始挖矿之后，你会在数分钟内就拥有几百以太币，这将足够你在测试网络中执行交易了。如果你仍想给你的账户预分配以太币，你可以这样做：</p>
+<p>1、在创建私有链之后创建一个新的账户
+2、拷贝新账户的地址
+3、将以下命令加到你的自定义初始区块文件中</p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="s2">&quot;alloc&quot;</span><span class="o">:</span>
+<span class="p">{</span>
+        <span class="s2">&quot;&lt;your account address e.g. 0x1fb891f92eb557f4d688463d0d7c560552263b5a&gt;&quot;</span><span class="o">:</span>
+        <span class="p">{</span> <span class="s2">&quot;balance&quot;</span><span class="o">:</span> <span class="s2">&quot;20000000000000000000&quot;</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">将 <code class="docutils literal"><span class="pre">0x1fb891f92eb557f4d688463d0d7c560552263b5a</span></code> 替换为你的账户地址。</p>
+</div>
+<p>保存新的初始区块文件，重新运行你的私有链。一旦geth加载完毕，使用 . 关闭它。</p>
+<p>我们要把一个地址分配到变量 <code class="docutils literal"><span class="pre">primary</span></code> 中，并检查它余额。</p>
+<p>在你的终端上执行 <code class="docutils literal"><span class="pre">geth</span> <span class="pre">account</span> <span class="pre">list</span></code> 以确认你的新地址被分配到哪个账户上。</p>
+<div class="highlight-Console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> geth account list
+<span class="go">Account #0: {d1ade25ccd3d550a7eb532ac759cac7be09c2719}</span>
+<span class="go">Account #1: {da65665fc30803cb1fb7e6d86691e20b1826dee0}</span>
+<span class="go">Account #2: {e470b1a7d2c9c5c6f03bbaa8fa20db6d404a0c32}</span>
+<span class="go">Account #3: {f4dd5c3794f1fd0cdc0327a83aa472609c806e99}</span>
+</pre></div>
+</div>
+<p>确认哪个账户是你预分配了以太币的。
+Take note of which account # is the one that you pre-allocated ether to.
+或者你可以用 <code class="docutils literal"><span class="pre">geth</span> <span class="pre">console</span></code> 启动控制台（使用与开始启动 <code class="docutils literal"><span class="pre">geth</span></code> 时相同的参数）。提示符出现之后，输入：</p>
+<div class="highlight-Console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> eth.accounts
+</pre></div>
+</div>
+<p>它将返回你现在掌握的账户地址。</p>
+<div class="highlight-Console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> <span class="nv">primary</span> <span class="o">=</span> eth.accounts<span class="o">[</span><span class="m">0</span><span class="o">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">把 <code class="docutils literal"><span class="pre">0</span></code> 替换为你的账户索引。这个命令将返回你的主以太坊地址。</p>
+</div>
+<p>输入以下命令：</p>
+<div class="highlight-Console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> <span class="nv">balance</span> <span class="o">=</span> web3.fromWei<span class="o">(</span>eth.getBalance<span class="o">(</span>primary<span class="o">)</span>, <span class="s2">&quot;ether&quot;</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>这将会返回 <code class="docutils literal"><span class="pre">7.5</span></code> ，表明你的账户有很多以太币。我们在初始区块文件中指定了那么大数字的原因是余额字段使用的单位是wei，是以太坊货币维度中最小的单位（参见 <a class="reference internal" href="../ether.html#ether"><span class="std std-ref">以太币</span></a> ）。</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.reddit.com/r/ethereum/comments/3kdnus/question_about_private_chain_mining_dont_upvote/">https://www.reddit.com/r/ethereum/comments/3kdnus/question_about_private_chain_mining_dont_upvote/</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../mining.html" class="btn btn-neutral float-right" title="挖矿" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="connecting-to-the-network.html" class="btn btn-neutral" title="连接到网络" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Ethereum community.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

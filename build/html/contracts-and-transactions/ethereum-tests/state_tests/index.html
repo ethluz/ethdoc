@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>State Tests &mdash; 以太坊Homestead文档 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../../about.html"/>
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="以太坊Homestead文档 0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Ethereum Tests" href="../index.html"/>
+        <link rel="next" title="RLP Tests" href="../rlp_tests/index.html"/>
+        <link rel="prev" title="Blockchain Tests" href="../blockchain_tests/index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> 以太坊Homestead文档
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ethereum-clients/index.html">以太坊客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../connecting-to-clients/index.html">连接到以太坊客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../account-management.html">账户管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ether.html">以太币</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../network/index.html">以太坊网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mining.html">挖矿</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">合约和交易</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../account-types-gas-and-transactions.html">账户类型、气和交易</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contracts.html">合约</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accessing-contracts-and-transactions.html">访问合约和交易</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mix.html">Mix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../developer-tools.html">Dapps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../developer-tools.html#id3">开发工具</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Ethereum Tests</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../using-testeth.html">Using Testeth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blockchain_tests/index.html">Blockchain Tests</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">State Tests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#basic-structure">Basic structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sections">Sections</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../rlp_tests/index.html">RLP Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../difficulty_tests/index.html">Difficulty Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transaction_tests/index.html">Transaction Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vm_tests/index.html">VM Tests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../web3-base-layer-services.html">Web3基础层服务</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../frequently-asked-questions/frequently-asked-questions.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">术语表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">Homestead文档计划</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">以太坊Homestead文档</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">合约和交易</a> &raquo;</li>
+        
+          <li><a href="../index.html">Ethereum Tests</a> &raquo;</li>
+        
+      <li>State Tests</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/contracts-and-transactions/ethereum-tests/state_tests/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="state-tests">
+<span id="id1"></span><h1>State Tests<a class="headerlink" href="#state-tests" title="Permalink to this headline">¶</a></h1>
+<p>Found in <code class="docutils literal"><span class="pre">/StateTest</span></code>, the state tests aim is to test the basic workings of the state in isolation.</p>
+<p>It is based around the notion of executing a single transaction, described by the <code class="docutils literal"><span class="pre">transaction</span></code> portion of the test. The overarching environment in which it is executed is described by the <code class="docutils literal"><span class="pre">env</span></code> portion of the test and includes attributes of the current and previous blocks. A set of pre-existing accounts are detailed in the <code class="docutils literal"><span class="pre">pre</span></code> portion and form the world state prior to execution. Similarly, a set of accounts are detailed in the <code class="docutils literal"><span class="pre">post</span></code> portion to specify the end world state. Since the data of the blockchain is not given, the opcode <code class="docutils literal"><span class="pre">BLOCKHASH</span></code> could not return the hashes of the corresponding blocks. Therefore we define the hash of block number <code class="docutils literal"><span class="pre">n</span></code> to be  <code class="docutils literal"><span class="pre">SHA256(&quot;n&quot;)</span></code>.</p>
+<p>The log entries (<code class="docutils literal"><span class="pre">logs</span></code>) as well as any output returned from the code (<code class="docutils literal"><span class="pre">output</span></code>) is also detailed.</p>
+<p>It is generally expected that the test implementer will read <code class="docutils literal"><span class="pre">env</span></code>, <code class="docutils literal"><span class="pre">transaction</span></code> and <code class="docutils literal"><span class="pre">pre</span></code> then check their results against <code class="docutils literal"><span class="pre">logs</span></code>, <code class="docutils literal"><span class="pre">out</span></code>, and <code class="docutils literal"><span class="pre">post</span></code>.</p>
+<div class="section" id="basic-structure">
+<h2>Basic structure<a class="headerlink" href="#basic-structure" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;test name 1&quot;</span><span class="p">:</span> <span class="p">{</span>
+           <span class="s2">&quot;env&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
+           <span class="s2">&quot;logs&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
+           <span class="s2">&quot;out&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
+           <span class="s2">&quot;post&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
+           <span class="s2">&quot;pre&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
+           <span class="s2">&quot;transaction&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
+   <span class="p">},</span>
+   <span class="s2">&quot;test name 2&quot;</span><span class="p">:</span> <span class="p">{</span>
+           <span class="s2">&quot;env&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
+           <span class="s2">&quot;logs&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
+           <span class="s2">&quot;out&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
+           <span class="s2">&quot;post&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
+           <span class="s2">&quot;pre&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
+           <span class="s2">&quot;transaction&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="o">...</span> <span class="p">},</span>
+   <span class="p">},</span>
+   <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sections">
+<h2>Sections<a class="headerlink" href="#sections" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>The</strong> <code class="docutils literal"><span class="pre">env</span></code> <strong>section:</strong></li>
+</ul>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">currentCoinbase</span></code></div>
+<div class="line-block">
+<div class="line">The current block’s coinbase address, to be returned by the <cite>COINBASE</cite> instruction.</div>
+</div>
+<div class="line"><code class="docutils literal"><span class="pre">currentDifficulty</span></code></div>
+<div class="line-block">
+<div class="line">The current block’s difficulty, to be returned by the <cite>DIFFICULTY</cite> instruction.</div>
+</div>
+<div class="line"><code class="docutils literal"><span class="pre">currentGasLimit</span></code></div>
+<div class="line-block">
+<div class="line">The current block’s gas limit.</div>
+</div>
+<div class="line"><code class="docutils literal"><span class="pre">currentNumber</span></code></div>
+<div class="line-block">
+<div class="line">The current block’s number. Also indicates network rules for the transaction. Since blocknumber = <strong>1000000</strong> Homestead rules are applied to transaction. (see <a class="reference external" href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2.mediawiki">https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2.mediawiki</a>)</div>
+</div>
+<div class="line"><code class="docutils literal"><span class="pre">currentTimestamp</span></code></div>
+<div class="line-block">
+<div class="line">The current block’s timestamp.</div>
+</div>
+<div class="line"><code class="docutils literal"><span class="pre">previousHash</span></code></div>
+<div class="line-block">
+<div class="line">The previous block’s hash.</div>
+<div class="line"><br /></div>
+</div>
+</div>
+<ul class="simple">
+<li><strong>The</strong> <code class="docutils literal"><span class="pre">transaction</span></code> <strong>section:</strong></li>
+</ul>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">data</span></code></div>
+<div class="line-block">
+<div class="line">The input data passed to the execution, as used by the <cite>CALLDATA</cite>… instructions. Given as an array of byte values. See $DATA_ARRAY.</div>
+</div>
+<div class="line"><code class="docutils literal"><span class="pre">gasLimit</span></code></div>
+<div class="line-block">
+<div class="line">The total amount of gas available for the execution, as would be returned by the <cite>GAS</cite> instruction were it be executed first.</div>
+</div>
+<div class="line"><code class="docutils literal"><span class="pre">gasPrice</span></code></div>
+<div class="line-block">
+<div class="line">The price of gas for the transaction, as used by the <cite>GASPRICE</cite> instruction.</div>
+</div>
+<div class="line"><code class="docutils literal"><span class="pre">nonce</span></code></div>
+<div class="line-block">
+<div class="line">Scalar value equal to the number of transactions sent by the sender.</div>
+</div>
+<div class="line"><code class="docutils literal"><span class="pre">address</span></code></div>
+<div class="line-block">
+<div class="line">The address of the account under which the code is executing, to be returned by the <cite>ADDRESS</cite> instruction.</div>
+</div>
+<div class="line"><code class="docutils literal"><span class="pre">secretKey</span></code></div>
+<div class="line-block">
+<div class="line">The secret key as can be derived by the v,r,s values if the transaction.</div>
+</div>
+<div class="line"><code class="docutils literal"><span class="pre">to</span></code></div>
+<div class="line-block">
+<div class="line">The address of the transaction’s recipient, to be returned by the <cite>ORIGIN</cite> instruction.</div>
+</div>
+<div class="line"><code class="docutils literal"><span class="pre">value</span></code></div>
+<div class="line-block">
+<div class="line">The value of the transaction (or the endowment of the create), to be returned by the <cite>CALLVALUE`</cite> instruction (if executed first, before any <cite>CALL</cite>).</div>
+<div class="line"><br /></div>
+</div>
+</div>
+<ul class="simple">
+<li><strong>The</strong> <code class="docutils literal"><span class="pre">pre</span></code> <strong>and</strong> <code class="docutils literal"><span class="pre">post</span></code> <strong>sections each have the same format of a mapping between addresses and accounts. Each account has the format:</strong></li>
+</ul>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">balance</span></code></div>
+<div class="line-block">
+<div class="line">The balance of the account.</div>
+</div>
+<div class="line"><code class="docutils literal"><span class="pre">nonce</span></code></div>
+<div class="line-block">
+<div class="line">The nonce of the account.</div>
+</div>
+<div class="line"><code class="docutils literal"><span class="pre">code</span></code></div>
+<div class="line-block">
+<div class="line">The body code of the account, given as an array of byte values. See $DATA_ARRAY.</div>
+</div>
+<div class="line"><code class="docutils literal"><span class="pre">storage</span></code></div>
+<div class="line-block">
+<div class="line">The account’s storage, given as a mapping of keys to values. For key used notion of string as digital or hex number e.g: <code class="docutils literal"><span class="pre">&quot;1200&quot;</span></code> or <code class="docutils literal"><span class="pre">&quot;0x04B0&quot;</span></code> For values used $DATA_ARRAY.</div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line">The <code class="docutils literal"><span class="pre">logs</span></code> sections is a mapping between the blooms and their corresponding logentries.</div>
+<div class="line">Each logentry has the format:</div>
+<div class="line"><code class="docutils literal"><span class="pre">address</span></code> The address of the logentry.</div>
+<div class="line"><code class="docutils literal"><span class="pre">data</span></code>      The data of the logentry.</div>
+<div class="line"><code class="docutils literal"><span class="pre">topics</span></code> The topics of the logentry, given as an array of values.</div>
+<div class="line"><br /></div>
+</div>
+<p>Finally, there is one simple key <code class="docutils literal"><span class="pre">output</span></code></p>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">output</span></code></div>
+<div class="line">The data, given as an array of bytes, returned from the execution (using the <code class="docutils literal"><span class="pre">RETURN</span></code> instruction). See $DATA_ARRAY. In order to avoid big data files, there is one exception. If the output data is prefixed with <code class="docutils literal"><span class="pre">#</span></code>, the following number represents the size of the output, and not the output directly.</div>
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>$DATA_ARRAY</strong> - type that intended to contain raw byte data</dt>
+<dd><p class="first">and for convenient of the users is populated with three
+types of numbers, all of them should be converted and
+concatenated to a byte array for VM execution.</p>
+<p>The types are:</p>
+<ol class="arabic simple">
+<li>number - (unsigned 64bit)</li>
+<li>“longnumber” - (any long number)</li>
+<li>“0xhex_num”  - (hex format number)</li>
+</ol>
+<blockquote class="last">
+<div>e.g: <code class="docutils literal"><span class="pre">````[1,</span> <span class="pre">2,</span> <span class="pre">10000,</span> <span class="pre">&quot;0xabc345dFF&quot;,</span> <span class="pre">&quot;199999999999999999999999999999999999999&quot;]````</span></code></div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../rlp_tests/index.html" class="btn btn-neutral float-right" title="RLP Tests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../blockchain_tests/index.html" class="btn btn-neutral" title="Blockchain Tests" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Ethereum community.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

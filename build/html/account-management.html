@@ -1,0 +1,608 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>账户管理 &mdash; 以太坊Homestead文档 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="about.html"/>
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="以太坊Homestead文档 0.1 documentation" href="index.html"/>
+        <link rel="next" title="以太币" href="ether.html"/>
+        <link rel="prev" title="ethereum-ruby" href="connecting-to-clients/ethereum-ruby/index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> 以太坊Homestead文档
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction/index.html">引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ethereum-clients/index.html">以太坊客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connecting-to-clients/index.html">连接到以太坊客户端</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">账户管理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#accounts">账户</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">秘钥文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-an-account">创建账户</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#geth-account-new">使用 <code class="docutils literal"><span class="pre">geth</span> <span class="pre">account</span> <span class="pre">new</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#geth">使用geth控制台</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mist">使用Mist以太坊钱包</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mist-multi-signature">在Mist中创建一个多重签名（Multi-Signature）的钱包</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eth">使用Eth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ethkey">使用EthKey（将不再支持）</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">导入预售钱包</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">使用Mist以太坊客户端</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">使用geth</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">更新一个账户</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">使用geth</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#backup-and-restore-accounts">备份和恢复账户</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12">手工备份/恢复</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">导入非加密的私钥</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ether.html">以太币</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network/index.html">以太坊网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mining.html">挖矿</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contracts-and-transactions/index.html">合约和交易</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frequently-asked-questions/frequently-asked-questions.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">术语表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Homestead文档计划</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">以太坊Homestead文档</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>账户管理</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/account-management.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>账户管理<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="accounts">
+<span id="id2"></span><h2>账户<a class="headerlink" href="#accounts" title="Permalink to this headline">¶</a></h2>
+<p>账户在以太坊中扮演了一个核心角色。账户有两种类型： <em>externally owned accounts</em> （EOAs，即外部拥有的账户，译者注）和 <em>contract accounts</em> （合约账户，译者注）。这里我们聚焦在外部拥有的账户上，简称为 <em>账户</em> 。合约账户将被简称为 <em>合约</em> ，在 <a class="reference internal" href="contracts-and-transactions/contracts.html#contracts"><span class="std std-ref">合约的章节里详细讨论</span></a> 。结合外部拥有的账户和合约，这个概念上的账户实体可以归结为 <em>状态对象</em> 。 这些实体是有状态的：账户有余额，合约账户既有余额也有合约数据的存储。所有账户的状态，就是一个以太坊网络中伴随着每个区块的更新所达成共识的状态。账户就是所有的实际用户通过交易与以太坊进行交互的必需媒介。</p>
+<p>如果我们把以太坊限定为只有外部拥有的账户，只允许它们之间的交易，那我们就做成了一个“altcoin”（即山寨币，译者注）系统，本身并不如比特币网络强大，只能用来交易以太币。</p>
+<p>账户代表着外部代理人的实体（比如真人用户、挖矿的节点或自动化的代理等）。账户使用公钥加密的方法对交易进行签名，以便EVM可以安全的校验交易发送者的身份。</p>
+</div>
+<div class="section" id="id3">
+<h2>秘钥文件<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>每个账户都由一对秘钥所定义，就是私钥和公钥。账户根据由其公钥的后20字节导出的 <em>地址</em> 进行索引编排。每一个私钥/地址对被编码在一个 <em>秘钥文件</em> 中，这个文件是JSON格式的文本文件，可以用任意文本编辑器修改。你账号的私钥是你的秘钥文件中最紧要的内容，它会由你创建账号时输入的密码进行加密处理。秘钥文件保存在你本地节点的data目录的 <code class="docutils literal"><span class="pre">keystore</span></code> 子目录下。请确保有定期备份你的秘钥文件。更多信息请参考 <a class="reference internal" href="#backup-and-restore-accounts"><span class="std std-ref">备份和恢复账户</span></a> 。</p>
+<p>创建一个秘钥就相当于创建了一个账户。</p>
+<ul class="simple">
+<li>你不需要告诉任何人你做了这件事</li>
+<li>你不需要和区块链做任何同步</li>
+<li>你不需要运行一个客户端</li>
+<li>你甚至不需要接入互联网</li>
+</ul>
+<p>当然，你的新账户不会包含任何以太币；但它已经是你的了。没有你的秘钥和密码，任何人都无法访问它。</p>
+<p>在以太坊节点间拷贝单独的秘钥文件乃至整个目录是安全的。</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">请注意，如果你从其他节点添加了秘钥文件，账户的顺序可能会变化。所以请确保你没有在脚本或代码段中依赖或改变账户的索引。</p>
+</div>
+</div>
+<div class="section" id="creating-an-account">
+<span id="id4"></span><h2>创建账户<a class="headerlink" href="#creating-an-account" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><strong>记住你的密码并备份你的秘钥文件。</strong> 你必须同时拥有秘钥文件和密码才能从一个账户中发起交易，包括发送以太币。请绝对地确保你有一个秘钥文件的拷贝并记住它的密码，把它们尽可能安全的保存。如果你丢失了秘钥文件或者忘记了你的密码，你将会失去账户中的所有以太币，这里没有任何迂回的方法。没有密码，想访问你的账户是不可能的，这里并没有 <em>忘记密码</em> 这样的选项。所以请别忘了它。</p>
+</div>
+<div class="section" id="geth-account-new">
+<h3>使用 <code class="docutils literal"><span class="pre">geth</span> <span class="pre">account</span> <span class="pre">new</span></code><a class="headerlink" href="#geth-account-new" title="Permalink to this headline">¶</a></h3>
+<p>在安装了geth客户端之后，你就可以简单地在命令行终端上执行  <code class="docutils literal"><span class="pre">geth</span> <span class="pre">account</span> <span class="pre">new</span></code> 来创建账户。</p>
+<p>你不需要运行geth客户端或者同步区块链数据就可以使用  <code class="docutils literal"><span class="pre">geth</span> <span class="pre">account</span></code> 命令。</p>
+<div class="highlight-Bash"><div class="highlight"><pre><span></span>$ geth account new
+
+  Your new account is locked with a password. Please give a password. Do not forget this password.
+  Passphrase:
+  Repeat Passphrase:
+  Address: <span class="o">{</span>168bc315a2ee09042d83d7c5811b533620531f67<span class="o">}</span>
+</pre></div>
+</div>
+<p>你也可以使用非交互方式来使用这个命令，只需要为 <code class="docutils literal"><span class="pre">--password</span></code> 选项增加一个纯文本密码文件的参数即可。文件内容直接为密码文本，也可以在最后加一个换行。</p>
+<div class="highlight-Bash"><div class="highlight"><pre><span></span>$ geth --password /path/to/password account new
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><code class="docutils literal"><span class="pre">--password</span></code> 选项应该仅在可信环境中做测试或自动化时使用。把你的密码存到文件里或用其他方式暴露，通常不是个好主意。如果你一定要使用这个选项，请保证没有其他人能访问保存密码的文件。你可以在Mac/Linux系统中用以下方法实现这点。</p>
+</div>
+<div class="highlight-Bash"><div class="highlight"><pre><span></span>touch /path/to/password
+chmod <span class="m">600</span> /path/to/password
+cat &gt; /path/to/password
+&gt;I <span class="nb">type</span> my pass
+</pre></div>
+</div>
+<p>在  <code class="docutils literal"><span class="pre">geth</span> <span class="pre">account</span></code> 命令后加上 <code class="docutils literal"><span class="pre">list</span></code> 子命令，即可列出你的 <code class="docutils literal"><span class="pre">keystore</span></code> 目录下保存的所有账户信息。</p>
+<div class="highlight-Bash"><div class="highlight"><pre><span></span>$ geth account list
+
+account <span class="c1">#0: {a94f5374fce5edbc8e2a8697c15331677e6ebf0b}</span>
+account <span class="c1">#1: {c385233b188811c9f355d4caec14df86d6248235}</span>
+account <span class="c1">#2: {7f444580bfef4b9bc7e14eb7fb2a029336b07c9d}</span>
+</pre></div>
+</div>
+<p>账户信息文件的文件名格式为： <code class="docutils literal"><span class="pre">UTC--&lt;created_at</span> <span class="pre">UTC</span> <span class="pre">ISO8601&gt;-&lt;address</span> <span class="pre">hex&gt;</span></code> 。列表中数据的显示顺序是以字母为序，但因为时间戳是在最前边的，所以实际上就是以创建时间为序。</p>
+</div>
+<div class="section" id="geth">
+<h3>使用geth控制台<a class="headerlink" href="#geth" title="Permalink to this headline">¶</a></h3>
+<p>要使用geth，我们必须先用控制台模式启动geth。（或者你可以使用 <code class="docutils literal"><span class="pre">geth</span> <span class="pre">attach</span></code> 把geth关联到一个已经运行的控制台。）</p>
+<div class="highlight-Bash"><div class="highlight"><pre><span></span>&gt; geth console <span class="m">2</span>&gt;&gt; file_to_log_output
+instance: Geth/v1.4.0-unstable/linux/go1.5.1
+coinbase: coinbase: <span class="o">[</span>object Object<span class="o">]</span>
+at block: <span class="m">865174</span> <span class="o">(</span>Mon, <span class="m">18</span> Jan <span class="m">2016</span> <span class="m">02</span>:58:53 GMT<span class="o">)</span>
+datadir: /home/USERNAME/.ethereum
+</pre></div>
+</div>
+<p>控制台是你可以通过命令行的方式访问你的本地节点的地方。例如，你可以用以下命令列出你的账户。</p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span>
+
+<span class="p">{</span>
+<span class="nx">code</span><span class="o">:</span> <span class="o">-</span><span class="mi">32000</span><span class="p">,</span>
+<span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;no keys in store&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>以上结果显示出你还没有账户。你可以在控制台创建账户。</p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">personal</span><span class="p">.</span><span class="nx">newAccount</span><span class="p">()</span>
+<span class="nx">Passphrase</span><span class="o">:</span>
+<span class="nx">Repeat</span> <span class="nx">passphrase</span><span class="o">:</span>
+<span class="s2">&quot;0xb2f69ddf70297958e582a0cc98bce43294f1007d&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">记住：要使用安全性高、最好有随机性的密码。</p>
+</div>
+<p>我们刚刚创建了第一个账户。如果再尝试列出账户的话，我们就能看到这个新账户。</p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span>
+<span class="p">[</span><span class="s2">&quot;0xb2f69ddf70297958e582a0cc98bce43294f1007d&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mist">
+<span id="using-mist-ethereum-wallet"></span><h3>使用Mist以太坊钱包<a class="headerlink" href="#mist" title="Permalink to this headline">¶</a></h3>
+<p>由于普通用户对命令行的厌恶，现在有了个基于GUI（图形用户界面）的方法：“官方的”Mist以太坊钱包。Mist以太坊钱包和它的双亲Mist项目是由以太坊基金会所资助的，所以也就有了“官方的”说法。钱包应用程序支持Linux、Mac OS X和Windows操作系统。</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Mist钱包仍是个Beta版本，请意识到你需要自行承担相关风险。</p>
+</div>
+<p>使用GUI的Mist以太坊钱包创建账户不能再简单了。事实上，你的第一个账户已经在安装过程中创建出来了。</p>
+<p>1、为你的操作系统 <a class="reference external" href="https://github.com/ethereum/mist/releases">下载最新版的钱包应用</a> 。因为实际上你是在运行一个geth全节点，所以第一次打开钱包应用时会触发一次与以太坊区块链的完全同步过程。</p>
+<p>2、解压下载的文件，运行以太坊钱包可执行文件。</p>
+<a class="reference internal image-reference" href="_images/51Downloading.png"><img alt="downloading-mist" class="align-center" src="_images/51Downloading.png" style="width: 436.5px; height: 351.75px;" /></a>
+<p>3、等待区块链的完全同步，然后跟随页面向导完成设置，你的第一个账户也会被创建出来。</p>
+<p>4、当你第一次运行Mist以太坊钱包的时候，你会看到在安装过程中创建的账户。它会被默认的命名为 MAIN ACCOUNT (ETHERBASE)。</p>
+<a class="reference internal image-reference" href="_images/51OpeningScreen.png"><img alt="opening-screen" class="align-center" src="_images/51OpeningScreen.png" style="width: 512.0px; height: 469.0px;" /></a>
+<p>5、创建额外的账户很容易，你只需要在应用界面中点击“ADD ACCOUNT”并输入密码即可。</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Mist钱包还在不断开发更新中，所以以上步骤也许会有变动。</p>
+</div>
+</div>
+<div class="section" id="mist-multi-signature">
+<h3>在Mist中创建一个多重签名（Multi-Signature）的钱包<a class="headerlink" href="#mist-multi-signature" title="Permalink to this headline">¶</a></h3>
+<p>Mist以太坊钱包有一个选项，可以使用多重签名的钱包来保护你的钱包余额。多重签名钱包的好处就是当从你的账户余额中取出较大数额的结余时，需要多个账户的共同授权。为了使用多重签名钱包，你需要创建多个账户。</p>
+<p>在Mist中创建账户文件非常简单。在’Accounts’中点击’Add Account’，选择一个容易记住的强密码（记住，没有忘记密码的选项），确认，你的账户就创建出来了。至少创建两个账户。第二个账户也可以创建到另外一台独立的计算机上（这么做，理论上更安全）。要创建多重签名钱包，你只需要第二个账户的公钥（账户地址，最好拷贝/粘贴，不要用手工录入，以免出错）。你的主账户会被用来创建多重签名的钱包合约，它应该在你想要创建多重签名钱包的计算机上。</p>
+<p>现在你已经安全的创建了你的账户，记得备份它们。（如果你没做备份，一旦你的计算机坏掉，你讲失去你的所有账户余额。）在顶部菜单点击’Backup’选择’keystore’文件夹，选中它用拷贝命令（不要用剪切，这非常糟糕）。然后切换到桌面，右击空白区域，选择粘贴。你也许应该把这个新的’keystore’文件夹改名为’Ethereum-keystore-backup-year-month-day’，这样你以后可以很快的找到它。这时，你也可以把这个目录添加到一个zip/rar压缩包（甚至给压缩包加上密码，如果你要把它保存到线上的话），保存到U盘、刻录到CD或者上传到云存储服务中（比如Dropbox，Google Drive之类）。</p>
+<p>你现在应该至少添加0.02以太币到你的主账户中（就是你要用来创建多重签名钱包的账户），这是你创建多重签名钱包所需的交易费。此外还需要1以太币以上的余额，因为Mist需要这个余额来确保有足够的’gas’来执行钱包中的合约交易。所以对于新用户来讲，你至少要有1.02以上的以太币。</p>
+<p>当你创建一个多重签名钱包时，你需要输入与其关联的所有账户地址。建议你从Mist中各个账户的详情界面中拷贝/粘贴这些地址到一个文本编辑器（用记事本、kedit之类）。请不要手工输入这些地址，以免因为输入错误致使交易被发送到错误的地址而使你损失掉你的账户余额。</p>
+<p>我们现在已经可以来创建多重签名钱包了。在’Wallet Contracts’下选择’Add Wallet Contract’，给它起个名字，选择账户的拥有者，选择’Multisignature Wallet Contract’，你将看到类似下面这样的消息：</p>
+<p>“This is a joint account controlled by X owners. You can send up to X ether per day. Any transaction over that daily limit requires the confirmation of X owners.”</p>
+<p>设置你想关联到这个多重签名钱包的任意数量的拥有者（账户），设置一个每日提取的上限（单独账户的提取数额），以及需要多少账户来批准超过这个上限的提取。</p>
+<p>现在，把刚刚拷贝/粘贴到文本编辑器中的账户地址添加进来，确认所有的设置，然后点击下方的’Create’按钮。你需要输入你的账户密码来发送交易。而后就可以在’Wallet Contracts’中看到这个新钱包的状态为’creating’。</p>
+<p>当钱包创建成功之后，你将可以看到合约地址。选中这个地址，把它拷贝/粘贴到文本编辑器，保存成新的文本文件’Ethereum-Wallet-Address.txt’或者任何你喜欢的名字。</p>
+<p>现在，你要做的就是备份这个文件，就像你备份账户文件一样，之后你就可以在Eth中用这个地址加载你的多重签名钱包了。</p>
+<p>如果你要恢复你的备份，可以简单的将’Ethereum-keystore-backup’拷贝回’keystore’目录，就像本节第一段讲的那样。如果在一台没有安装过Mist的计算机上全新安装Mist的话，你可能需要手工创建’keystore’目录。当我们要恢复一个多重签名钱包时，不用像我们之前创建它那样选择’Multisignature Wallet Contract’，我们可以直接选择’Import Wallet’。</p>
+<p>故障排除：</p>
+<ul class="simple">
+<li>Mist没有同步。一个方案是通过NTP服务同步你的本地计算机硬件时间，然后重启。</li>
+<li>Mist在同步之后启动了，但却显示了一个空白界面。如果你是在使用一个基于Linux的操作系统（比如Ubuntu，Linux Mint之类）在运行第三方的视频驱动程序，那你可以试试安装厂商官方的视频驱动程序。</li>
+<li>“Wrong password”提示。这应该是Mist当前版本的一个错误提示。重启Mist，这个问题应该就消失了（当然，你要输入正确的密码）。</li>
+</ul>
+</div>
+<div class="section" id="eth">
+<h3>使用Eth<a class="headerlink" href="#eth" title="Permalink to this headline">¶</a></h3>
+<p>geth中与秘钥管理相关选项都可以在eth中以同样的方式使用。</p>
+<p>以下是与账户相关的选项：</p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">eth</span> <span class="nx">account</span> <span class="nx">list</span>  <span class="c1">// List all keys available in wallet.</span>
+<span class="o">&gt;</span> <span class="nx">eth</span> <span class="nx">account</span> <span class="k">new</span>   <span class="c1">// Create a new key and add it to the wallet.</span>
+<span class="o">&gt;</span> <span class="nx">eth</span> <span class="nx">account</span> <span class="nx">update</span> <span class="p">[</span><span class="o">&lt;</span><span class="nx">uuid</span><span class="o">&gt;|&lt;</span><span class="nx">address</span><span class="o">&gt;</span> <span class="p">,</span> <span class="p">...</span> <span class="p">]</span>  <span class="c1">// Decrypt and re-encrypt given keys.</span>
+<span class="o">&gt;</span> <span class="nx">eth</span> <span class="nx">account</span> <span class="kr">import</span> <span class="p">[</span><span class="o">&lt;</span><span class="nx">uuid</span><span class="o">&gt;|&lt;</span><span class="nx">file</span><span class="o">&gt;|&lt;</span><span class="nx">secret</span><span class="o">-</span><span class="nx">hex</span><span class="o">&gt;</span><span class="p">]</span> <span class="c1">// Import keys from given source and place in wallet.</span>
+</pre></div>
+</div>
+<p>以下是与钱包相关的选项：</p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">eth</span> <span class="nx">wallet</span> <span class="kr">import</span> <span class="o">&lt;</span><span class="nx">file</span><span class="o">&gt;</span> <span class="c1">//Import a presale wallet.</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">‘account import’仅能用来导入通用的秘钥文件。’wallet import’选项只能用来导入预售的钱包。</p>
+</div>
+<p>通过集成的控制台也是可以进行秘钥管理的（比如内置的控制台或者geth关联的）：</p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">personal</span>
+<span class="p">{</span>
+      <span class="nx">listAccounts</span><span class="o">:</span> <span class="p">[],</span>
+      <span class="nx">getListAccounts</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">),</span>
+      <span class="nx">lockAccount</span><span class="o">:</span> <span class="kd">function</span><span class="p">(),</span>
+      <span class="nx">newAccount</span><span class="o">:</span> <span class="kd">function</span><span class="p">(),</span>
+      <span class="nx">unlockAccount</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ethkey">
+<h3>使用EthKey（将不再支持）<a class="headerlink" href="#ethkey" title="Permalink to this headline">¶</a></h3>
+<p>EthKey是个用C++实现的CLI（Command Line Interfaces，即命令行交互接口，译者注）工具，使你可以与以太坊钱包进行交互。你可以用它列出、核对、创建、删除和修改秘钥，也可以对交易进行核对、创建和签名。</p>
+<p>我们假定你没有运行一个像eth这样的客户端或者其他的Aleth系列的客户端，如果有，你可以跳过这段。
+要创建一个钱包，可以使用``ethkey``的``createwallet``命令：</p>
+<div class="highlight-Bash"><div class="highlight"><pre><span></span>&gt; ethkey createwallet
+</pre></div>
+</div>
+<p>请输入一个“超级管理员”密码来保护你的秘钥（让密码很健壮，即很难猜到，译者注）：
+你会被要求输出“超级管理员”密码，它将保护你的隐私，作为你的所有秘钥的缺省密码。你需要再同样输入一次以确认密码。</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">使用一个安全性高、最好有随机性的密码。</p>
+</div>
+<p>我们可以简单地用以下命令列出所有秘钥：</p>
+<div class="highlight-Bash"><div class="highlight"><pre><span></span>&gt; ethkey list
+
+No keys found.
+</pre></div>
+</div>
+<p>它告诉我们，还没有创建任何秘钥。我们接下来将创建一个。</p>
+<p>我们可以用``new``命令创建秘钥。使用这个命令，我们必须指定一个名字，就是在钱包里的账户名字。让我们把它叫做“test”。</p>
+<div class="highlight-Bash"><div class="highlight"><pre><span></span>&gt; ethkey new <span class="nb">test</span>
+</pre></div>
+</div>
+<p>输入一个密码来保护这个账户（或者不输入，使用“超级管理员”密码）。
+系统会提示你输入密码来保护这个秘钥，如果你直接按回车，它就将使用缺省的“超级管理员”密码。通常，这样的做就使你使用这个密钥时不再需要输入密码（因为系统记住了“超级管理员”密码）。 一般来讲，你应该使用不同的密码以保护你的账号，当一个密码被破解之后不会导致其他账户也被访问；但出于使用上的方便，对于一些不太重要的账户，你也许会决定使用同一个密码。</p>
+<p>这里，让我们用一个极富想象力的密码‘123’。（除了对于临时的测试账户，永远不要使用这么简单地密码。）
+输入密码之后，系统会要求你再确认，所以再输入一次‘123’。
+这里还需要你提供一个密码提示信息，它将会在要求你输入密码时显示。这个提示也会保存在钱包中，并由“超级管理员”密码所保护。这里我们使用一个极其糟糕的提示“321 backwards”（把321倒过来）。</p>
+<div class="highlight-Bash"><div class="highlight"><pre><span></span>&gt; ethkey new <span class="nb">test</span>
+
+Enter a passphrase with which to secure this account <span class="o">(</span>or nothing to use the master passphrase<span class="o">)</span>:
+Please confirm the passphrase by entering it again:
+Enter a hint to <span class="nb">help</span> you remember this passphrase: <span class="m">321</span> backwards
+Created key 055dde03-47ff-dded-8950-0fe39b1fa101
+  Name: <span class="nb">test</span>
+  Password hint: <span class="m">321</span> backwards
+  ICAP: XE472EVKU3CGMJF2YQ0J9RO1Y90BC0LDFZ
+  Raw hex: 0092e965928626f8880629cec353d3fd7ca5974f
+</pre></div>
+</div>
+<p>所有正常的ICAP（即Inter Exchange Client Address Protocol，译者注）地址都会由‘XE’开头，这样你可以很容易的辨认出来。同时也请注意，这个秘钥还有一个额外的标识，也就是所谓的UUID（即Universal Unique Identifier，译者注）。这是一个秘钥的统一唯一标识，不会对账户有任何影响，也不会帮助攻击者揭示任何关于你本人的信息。它也会反映到可以在~/.web3/keys(Mac or Linux)或$HOME/AppData/Web3/keys(Windows)目录下找到的秘钥文件名上。
+现在我们列出钱包中的的秘钥，确认它已经创建好了。</p>
+<div class="highlight-Bash"><div class="highlight"><pre><span></span>&gt; ethkey list
+055dde03-47ff-dded-8950-0fe39b1fa101 0092e965… XE472EVKU3CGMJF2YQ0J9RO1Y90BC0LDFZ  <span class="nb">test</span>
+</pre></div>
+</div>
+<p>这里会每行显示一个秘钥。在上边的例子中，秘钥会保存在文件【055dde…】中，ICAP地址为【XE472EVK…】。显然这很难记住，于是它还有个简单的名字“test”。</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>导入预售钱包<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>使用Mist以太坊客户端<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>使用Mist以太坊钱包的GUI来导入预售钱包非常容易。事实上在安装过程中你就会被询问是否需要导入预售钱包。</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Mist钱包仍是个beta版本的软件，请意识到相关风险需要由你自行承担。</p>
+</div>
+<p>关于安装Mist以太坊钱包请参考之前的章节 <a class="reference internal" href="#using-mist-ethereum-wallet"><span class="std std-ref">使用Mist以太坊钱包创建账户</span></a> 。</p>
+<p>你可以简单地拖拽你的 <code class="docutils literal"><span class="pre">.json</span></code> 预售钱包文件到指定的区域，输入你的密码来导入你的预售账户。</p>
+<a class="reference internal image-reference" href="_images/51PresaleImportInstall.png"><img alt="presale-import" class="align-center" src="_images/51PresaleImportInstall.png" style="width: 436.5px; height: 351.75px;" /></a>
+<p>如果你没有在安装客户端时导入预售钱包，你也可以在任何时候从 <code class="docutils literal"><span class="pre">Accounts</span></code> 菜单中选择 <code class="docutils literal"><span class="pre">Import</span> <span class="pre">Pre-sale</span> <span class="pre">Accounts</span></code> 来做这件事。</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Mist钱包仍然在持续开发，所以以上说明的细节可能会有所更改。</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>使用geth<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>如果你有个独立的geth安装，你可以通过如下命令完成预售钱包的导入：</p>
+<div class="highlight-Bash"><div class="highlight"><pre><span></span>geth wallet import /path/to/my/presale-wallet.json
+</pre></div>
+</div>
+<p>你会被要求输入密码。</p>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>更新一个账户<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>你可以更新你的秘钥文件到最新的秘钥文件格式，或更改秘钥文件的密码。</p>
+<div class="section" id="id10">
+<h3>使用geth<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>你可以使用 <code class="docutils literal"><span class="pre">update</span></code> 子命令，带上账户地址或索引作为参数来更新一个既有账户。记住，账户的索引反映了账户的创建顺序（包含了时间信息的秘钥文件名的字母顺序）。</p>
+<div class="highlight-Bash"><div class="highlight"><pre><span></span>geth account update b0047c606f3af7392e073ed13253f8f4710b08b6
+</pre></div>
+</div>
+<p>或者</p>
+<div class="highlight-Bash"><div class="highlight"><pre><span></span>geth account update <span class="m">2</span>
+</pre></div>
+</div>
+<p>例如:</p>
+<div class="highlight-Bash"><div class="highlight"><pre><span></span>$ geth account update a94f5374fce5edbc8e2a8697c15331677e6ebf0b
+
+Unlocking account a94f5374fce5edbc8e2a8697c15331677e6ebf0b <span class="p">|</span> Attempt <span class="m">1</span>/3
+Passphrase:
+0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b
+account <span class="s1">&#39;a94f5374fce5edbc8e2a8697c15331677e6ebf0b&#39;</span> unlocked.
+Please give a new password. Do not forget this password.
+Passphrase:
+Repeat Passphrase:
+0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b
+</pre></div>
+</div>
+<p>账户会被用加密格式保存为新的版本，你会被询问相应的密码以解锁账户，而后要输入一个新密码来保护更新后的文件。相同的方法也适用于将一个不再支持的秘钥文件格式更新为最新，或者修改账户的密码。</p>
+<p>你也可以使用 <code class="docutils literal"><span class="pre">--password</span></code> 选项来指定密码文件，而不再手工输入密码。</p>
+<div class="highlight-Bash"><div class="highlight"><pre><span></span>geth --password &lt;passwordfile&gt; account update a94f5374fce5edbc8e2a8697c15331677e6ebf0bs
+</pre></div>
+</div>
+<p>由于只能指定一个密码文件，所以这种方式仅可用于更新账户秘钥文件格式，如果要修改密码，只能使用两次交互的方式。</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">账户更新会有个副作用，就是会导致你的账户顺序变化。在一次更新完成之后，更新的这个秘钥所有之前版本的文件都会被删除。</p>
+</div>
+</div>
+</div>
+<div class="section" id="backup-and-restore-accounts">
+<span id="id11"></span><h2>备份和恢复账户<a class="headerlink" href="#backup-and-restore-accounts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h3>手工备份/恢复<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>你必须拥有一个账户的秘钥文件来使你可以从这个账户中发送交易。秘钥文件可以在以太坊节点目录下的【keystore】子目录下找到。各平台中缺省的数据目录位置如下：</p>
+<ul class="simple">
+<li>Windows: <code class="docutils literal"><span class="pre">C:\Users\username\%appdata%\Roaming\Ethereum\keystore</span></code></li>
+<li>Linux: <code class="docutils literal"><span class="pre">~/.ethereum/keystore</span></code></li>
+<li>Mac: <code class="docutils literal"><span class="pre">~/Library/Ethereum/keystore</span></code></li>
+</ul>
+<p>要备份秘钥文件（账户），可以拷贝 <code class="docutils literal"><span class="pre">keystore</span></code> 目录下的文件，或者直接整个拷贝 <code class="docutils literal"><span class="pre">keystore</span></code> 目录。</p>
+<p>要恢复秘钥文件（账户），把秘钥文件拷贝回 <code class="docutils literal"><span class="pre">keystore</span></code> 目录即可。</p>
+</div>
+<div class="section" id="id13">
+<h3>导入非加密的私钥<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">geth</span></code> 支持导入一个非加密的私钥。</div></blockquote>
+<div class="highlight-Bash"><div class="highlight"><pre><span></span>geth account import /path/to/&lt;keyfile&gt;
+</pre></div>
+</div>
+<p>这个命令会从文本文件 <code class="docutils literal"><span class="pre">&lt;keyfile&gt;</span></code> 导入一个非加密的私钥，创建一个新账户并打印其地址。
+这个秘钥文件应该包含转换为16进制的合法的EC（Ellipse Curve，即椭圆曲线，译者注）字节数据（也就是由椭圆曲线加密算法生成的原始私钥二进制数值的16进制表示，译者注）。
+账户会被保存为加密格式，你会被要求输入一个密码。请务必记住这个密码以便以后能解锁你的账户。</p>
+<p>以下是一个指定了数据目录的例子。如果未使用 <code class="docutils literal"><span class="pre">--datadir</span></code> 选项，新账户会被创建到缺省的数据目录，秘钥文件会保存在 <code class="docutils literal"><span class="pre">keystore</span></code> 子目录下。</p>
+<div class="highlight-Bash"><div class="highlight"><pre><span></span>$ geth --datadir /someOtherEthDataDir  account import ./key.prv
+The new account will be encrypted with a passphrase.
+Please enter a passphrase now.
+Passphrase:
+Repeat Passphrase:
+Address: <span class="o">{</span>7f444580bfef4b9bc7e14eb7fb2a029336b07c9d<span class="o">}</span>
+</pre></div>
+</div>
+<p>你也可以使用 <code class="docutils literal"><span class="pre">--password</span></code> 选项指定密码文件。</p>
+<div class="highlight-Bash"><div class="highlight"><pre><span></span>geth --password &lt;passwordfile&gt; account import &lt;keyfile&gt;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">由于你可以直接拷贝你的加密账户到不同的以太坊节点，所以这种导入/导出操作在这种情况下就不需要了。</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">当你拷贝秘钥文件到某个节点的 <code class="docutils literal"><span class="pre">keystore</span></code> 目录下时，账户的顺序可能会发生变化。所以请确保你没有在脚本中依赖账户的顺序，或者仔细检查并更新脚本中使用的索引。</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ether.html" class="btn btn-neutral float-right" title="以太币" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="connecting-to-clients/ethereum-ruby/index.html" class="btn btn-neutral" title="ethereum-ruby" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Ethereum community.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
