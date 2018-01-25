@@ -38,6 +38,14 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
 ]
+html_context = {
+    "display_github": True, # Integrate GitHub
+    "github_user": "luzhou", # Username
+    "github_repo": "ethdoc", # Repo name
+    "github_version": "master", # Version
+    "conf_py_path": "/source/", # Path in the checkout to the docs root
+}
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -56,7 +64,7 @@ master_doc = 'index'
 # General information about the project.
 project = u'以太坊Homestead文档'
 copyright = u'2016, Ethereum community'
-author = u'Ethereum community编纂, Rivers Yang译'
+author = u'刘亮'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
