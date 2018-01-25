@@ -61,9 +61,6 @@ start the client with::
 **Note:** The ``docker-eth`` command will accept the same flags as the raw ``eth``
 command.
 
-If you want to attach to the node, you can either just use mist (it will
-detect the node automatically), use ``geth attach ipc:/$HOME/.ethereum/geth.ipc``
-or ethereum-console as described in :ref:`Running cpp-ethereum`.
 
 Advanced usage:
 ---------------
