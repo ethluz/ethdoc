@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>合约和交易 &mdash; 以太坊Homestead文档 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="以太坊Homestead文档 0.1 documentation" href="../index.html"/>
+        <link rel="next" title="账户类型、气和交易" href="account-types-gas-and-transactions.html"/>
+        <link rel="prev" title="挖矿" href="../mining.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 以太坊Homestead文档
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ethereum-clients/index.html">以太坊客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../connecting-to-clients/index.html">连接到以太坊客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../account-management.html">账户管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ether.html">以太币</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">以太坊网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mining.html">挖矿</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">合约和交易</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="account-types-gas-and-transactions.html">账户类型、气和交易</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contracts.html">合约</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing-contracts-and-transactions.html">访问合约和交易</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mix.html">Mix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer-tools.html">Dapps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer-tools.html#id3">开发工具</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum-tests/index.html">Ethereum Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-base-layer-services.html">Web3基础层服务</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../frequently-asked-questions/frequently-asked-questions.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">术语表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">Homestead文档计划</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">以太坊Homestead文档</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>合约和交易</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/contracts-and-transactions/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>合约和交易<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="account-types-gas-and-transactions.html">账户类型、气和交易</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="account-types-gas-and-transactions.html#eoa">外部账户（EOA）和合约账户</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account-types-gas-and-transactions.html#id4">什么是交易？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account-types-gas-and-transactions.html#id5">什么是消息？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account-types-gas-and-transactions.html#id6">什么是气？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account-types-gas-and-transactions.html#id7">估算交易的费用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account-types-gas-and-transactions.html#id10">账户交互示例 - 对赌合约</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account-types-gas-and-transactions.html#id11">离线签名交易</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contracts.html">合约</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contracts.html#id2">什么是合约？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contracts.html#ethereum-high-level-languages">以太坊高级语言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contracts.html#id7">书写一个合约</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contracts.html#id8">编译一个合约</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contracts.html#id14">创建并发布一个合约</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contracts.html#interacting-with-a-contract">与一个合约进行交互</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contracts.html#id18">合约元数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contracts.html#id19">测试合约和交易</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="accessing-contracts-and-transactions.html">访问合约和交易</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="accessing-contracts-and-transactions.html#rpc">RPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing-contracts-and-transactions.html#id3">公约</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing-contracts-and-transactions.html#id5">发布合约</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing-contracts-and-transactions.html#id6">与智能合约交互</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing-contracts-and-transactions.html#web3-js">Web3.js</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing-contracts-and-transactions.html#id10">控制台</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessing-contracts-and-transactions.html#id12">查看合约和交易</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mix.html">Mix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mix/project-editor.html">Project Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mix/scenario-editor.html">Scenarios Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mix/state-viewer.html">State Viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mix/transaction-explorer.html">Transaction Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mix/javascript-console.html">JavaScript console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mix/transaction-debugger.html">Transaction debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mix/dapp-deployment.html">Dapps deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mix/codeeditor.html">Code Editor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developer-tools.html">Dapps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer-tools.html#dapp">Dapp名录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer-tools.html#id2">Dapp浏览器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developer-tools.html#id3">开发工具</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer-tools.html#ide-or-development-framework">Dapp开发资源</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer-tools.html#mix-ide">Mix-IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer-tools.html#ides-frameworks">IDEs/Frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer-tools.html#ethereum">Ethereum控制台</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer-tools.html#id9">基础层服务</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer-tools.html#evm">EVM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ethereum-tests/index.html">Ethereum Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ethereum-tests/using-testeth.html">Using Testeth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum-tests/blockchain_tests/index.html">Blockchain Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum-tests/state_tests/index.html">State Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum-tests/rlp_tests/index.html">RLP Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum-tests/difficulty_tests/index.html">Difficulty Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum-tests/transaction_tests/index.html">Transaction Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum-tests/vm_tests/index.html">VM Tests</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="web3-base-layer-services.html">Web3基础层服务</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web3-base-layer-services.html#swarm">Swarm - 去中心化数据存储和分发</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-base-layer-services.html#whisper">Whisper - 去中心化消息</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-base-layer-services.html#id1">名称注册</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-base-layer-services.html#id2">合约注册</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="account-types-gas-and-transactions.html" class="btn btn-neutral float-right" title="账户类型、气和交易" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../mining.html" class="btn btn-neutral" title="挖矿" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Ethereum community.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

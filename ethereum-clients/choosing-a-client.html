@@ -1,0 +1,367 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>选择客户端 &mdash; 以太坊Homestead文档 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="以太坊Homestead文档 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="以太坊客户端" href="index.html"/>
+        <link rel="next" title="cpp-ethereum" href="cpp-ethereum/index.html"/>
+        <link rel="prev" title="以太坊客户端" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 以太坊Homestead文档
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">引言</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">以太坊客户端</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">选择客户端</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">为什么有这么多以太坊客户端？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">我应该在台式电脑/笔记本电脑上安装什么？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">我应该在智能手机/平板电脑上安装什么？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sbc-single-board-computer">我应该在我的SBC（Single Board Computer，即单板机，译者注）上安装什么？</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">与客户端交互</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp-ethereum/index.html">cpp-ethereum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="go-ethereum/index.html">go-ethereum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyethapp/index.html">pyethapp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereumjs-lib/index.html">ethereumjs-lib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereumj/index.html">Ethereum(J)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereumh/index.html">ethereumH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parity/index.html">Parity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ruby-ethereum/index.html">ruby-ethereum</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../connecting-to-clients/index.html">连接到以太坊客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../account-management.html">账户管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ether.html">以太币</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">以太坊网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mining.html">挖矿</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contracts-and-transactions/index.html">合约和交易</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frequently-asked-questions/frequently-asked-questions.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">术语表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">Homestead文档计划</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">以太坊Homestead文档</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">以太坊客户端</a> &raquo;</li>
+        
+      <li>选择客户端</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/ethereum-clients/choosing-a-client.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sec-clients">
+<span id="id1"></span><h1>选择客户端<a class="headerlink" href="#sec-clients" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>为什么有这么多以太坊客户端？<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>从这个项目的最早期就已经存在多个客户端实现，用以支持很多不同的操作系统。就生态系统的整体而言，客户端的多样性是个巨大的成就。它使我们可以验证基础协议（就像 <a class="reference external" href="https://github.com/ethereum/yellowpaper">黄皮书</a> 描述的那样）是清晰明确的。它也保留了新的创新的可能，使我们保持坦诚。但这对最终用户而言确实有些头疼，因为并没有一个统一的“以太坊安装程序”。</p>
+<p>截止到2016年9月，领先的实现是 <a class="reference internal" href="go-ethereum/index.html#go-ethereum"><span class="std std-ref">go-ethereum</span></a> 和 <a class="reference internal" href="parity/index.html#parity"><span class="std std-ref">Parity</span></a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="12%" />
+<col width="25%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Client</th>
+<th class="head">Language</th>
+<th class="head">Developers</th>
+<th class="head">Latest release</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="go-ethereum/index.html#go-ethereum"><span class="std std-ref">go-ethereum</span></a></td>
+<td>Go</td>
+<td><a class="reference external" href="https://ethereum.org/foundation">Ethereum Foundation</a></td>
+<td><a class="reference external" href="https://github.com/ethereum/go-ethereum/releases/tag/v1.4.18">go-ethereum-v1.4.18</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="parity/index.html#parity"><span class="std std-ref">Parity</span></a></td>
+<td>Rust</td>
+<td><a class="reference external" href="https://ethcore.io/">Ethcore</a></td>
+<td><a class="reference external" href="https://github.com/ethcore/parity/releases/tag/v1.4.0">Parity-v1.4.0</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="cpp-ethereum/index.html#cpp-ethereum"><span class="std std-ref">cpp-ethereum</span></a></td>
+<td>C++</td>
+<td><a class="reference external" href="https://ethereum.org/foundation">Ethereum Foundation</a></td>
+<td><a class="reference external" href="https://github.com/bobsummerwill/cpp-ethereum/releases/tag/v1.3.0">cpp-ethereum-v1.3.0</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyethapp/index.html#pyethapp"><span class="std std-ref">pyethapp</span></a></td>
+<td>Python</td>
+<td><a class="reference external" href="https://ethereum.org/foundation">Ethereum Foundation</a></td>
+<td><a class="reference external" href="https://github.com/ethereum/pyethapp/releases/tag/v1.5.0">pyethapp-v1.5.0</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ethereumjs-lib/index.html#ethereumjs-lib"><span class="std std-ref">ethereumjs-lib</span></a></td>
+<td>Javascript</td>
+<td><a class="reference external" href="https://ethereum.org/foundation">Ethereum Foundation</a></td>
+<td><a class="reference external" href="https://github.com/ethereumjs/ethereumjs-lib/releases/tag/v3.0.0">ethereumjs-lib-v3.0.0</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ethereumj/index.html#ethereum-j"><span class="std std-ref">Ethereum(J)</span></a></td>
+<td>Java</td>
+<td><a class="reference external" href="http://www.ether.camp">&lt;ether.camp&gt;</a></td>
+<td><a class="reference external" href="https://github.com/ethereum/ethereumj/releases/tag/1.3.1">ethereumJ-v1.3.1</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ruby-ethereum/index.html#ruby-ethereum"><span class="std std-ref">ruby-ethereum</span></a></td>
+<td>Ruby</td>
+<td><a class="reference external" href="https://github.com/janx/">Jan Xie</a></td>
+<td><a class="reference external" href="https://rubygems.org/gems/ruby-ethereum/versions/0.9.6">ruby-ethereum-v0.9.6</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ethereumh/index.html#ethereumh"><span class="std std-ref">ethereumH</span></a></td>
+<td>Haskell</td>
+<td><a class="reference external" href="http://www.blockapps.net/">BlockApps</a></td>
+<td>no Homestead release yet</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id4">
+<h2>我应该在台式电脑/笔记本电脑上安装什么？<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>绝大多数用户只需要安装 <a class="reference external" href="https://github.com/ethereum/mist">Mist / Ethereum Wallet（以太坊钱包）</a> 就够了。</p>
+<p>以太坊钱包是一个  <strong>Mist浏览器</strong> 的独立dapp（去中心化应用）实现。它是继Homestead之后到来的大规模开发的核心部分。</p>
+<p>Mist是与 <a class="reference internal" href="go-ethereum/index.html#go-ethereum"><span class="std std-ref">go-ethereum</span></a> 和 <a class="reference internal" href="cpp-ethereum/index.html#cpp-ethereum"><span class="std std-ref">cpp-ethereum</span></a> 可执行库捆绑的。如果在启动Mist的时候还没有运行一个命令行以太坊客户端，那么Mist会使用一个内置的客户端（默认为 <strong>geth</strong>）来同步区块链数据。如果你想让Mist使用Parity或者想在一个私有网络中使用Mist，你需要在启动Mist之前先启动你自己的节点，这样Mist将会连接到已启动的节点上，而不是再自己启动一个。</p>
+<p><strong>将Parity和其他客户端添加为Mist优先使用的实体的工作也已经在进行中了。</strong></p>
+<p>如果你希望在命令行与Ethereum进行交互，享受JavaScript控制台带来的便利，那你应该直接安装客户端程序，就像安装Mist一样。请参考前文表格中的链接获得更多详细信息。</p>
+<p>如果你想挖矿，那Mist确实就不够了。请参考 <a class="reference internal" href="../mining.html#mining"><span class="std std-ref">挖矿</span></a> 。</p>
+</div>
+<div class="section" id="id5">
+<h2>我应该在智能手机/平板电脑上安装什么？<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>我们对于移动设备的支持还处于起步阶段。Go语言团队正在研发iOS和安卓的底层程序，一些开发者开始使用它们引入移动应用。但以太坊还没有一个可用的移动设备客户端。</p>
+<p>在移动设备上使用以太坊的主要障碍是由于对轻量级客户端的支持还不完备。已经完成的工作在一个私有的分支上关闭了，并且其仅支持Go语言的客户端。doublethinkco将基于授权的资助在未来数月中开始C++语言轻量级客户端的开发。</p>
+<p><a class="reference external" href="http://status.im">Status.im</a> 是一个最初使用基于 <a class="reference internal" href="ethereumj/index.html#ethereum-j"><span class="std std-ref">Ethereum(J)</span></a> 的 <a class="reference external" href="https://github.com/status-im/ethereumj-personal">ethereumj-personal</a> 构建，近来转而使用Geth混合构建的轻量级客户端。</p>
+</div>
+<div class="section" id="sbc-single-board-computer">
+<h2>我应该在我的SBC（Single Board Computer，即单板机，译者注）上安装什么？<a class="headerlink" href="#sbc-single-board-computer" title="Permalink to this headline">¶</a></h2>
+<p>基于你的技能水平和你想做的事，这里有几个选择。</p>
+<ul class="simple">
+<li>下载一个完整的镜像（链接到一个有详细的下载和安装手册的页面）<ul>
+<li>如果你是个对以太坊和像Raspberry Pi这样的单板机主板的新手的话，用这个就对了。下载一个对应你现在使用的主板的镜像，把它烧录到SD卡上，重启你的设备使用以太坊吧。</li>
+</ul>
+</li>
+<li>下载预编译应用（链接到一个有详细的下载和安装手册的页面）<ul>
+<li>如果你已经做好了一个SBC，使用了特定的OS或者你想保持一些既有的设置，那这是你的最佳选择。取决于不同的平台，你可以简单地下载合适的可执行程序，只需要最少的运行库和PATH设置，你就可以在你的既存环境中运行以太坊了！</li>
+</ul>
+</li>
+<li>使用定制的脚本从源码构建（链接到一个有更多详情和独立的SBC链接 <a class="reference external" href="https://github.com/ethembedded">https://github.com/ethembedded</a>）<ul>
+<li>正在进行一个定制的安装么？我们有一些可以“在设备上”编译源码的脚本。这些脚本包含对相关依赖的自动安装，就像客户端一样。这将允许你安装某个特定版本的以太坊客户端（比如“develop”、“master”等），编译你自己fork下来的某个客户端版本，来完全地享受错综复杂的构建过程。</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id6">
+<h1>与客户端交互<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h1>
+<p>关于从代码上与以太坊客户端交互，请参阅 <a class="reference internal" href="../connecting-to-clients/index.html#connecting-to-clients"><span class="std std-ref">连接到以太坊客户端</span></a> 。</p>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cpp-ethereum/index.html" class="btn btn-neutral float-right" title="cpp-ethereum" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="以太坊客户端" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Ethereum community.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

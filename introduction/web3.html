@@ -1,0 +1,287 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Web 3.0：一个去中心化应用的平台 &mdash; 以太坊Homestead文档 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="以太坊Homestead文档 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="引言" href="index.html"/>
+        <link rel="next" title="以太坊的历史" href="history-of-ethereum.html"/>
+        <link rel="prev" title="Homestead版本" href="the-homestead-release.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 以太坊Homestead文档
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">引言</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="what-is-ethereum.html">以太坊是什么?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how-to-use-this-guide.html">如何使用这份指南？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-homestead-release.html">Homestead版本</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Web 3.0：一个去中心化应用的平台</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">智能合约</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dao-decentralized-autonomous-organizations">DAO（Decentralized Autonomous Organizations，即去中心化自治组织，译者注）</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="history-of-ethereum.html">以太坊的历史</a></li>
+<li class="toctree-l2"><a class="reference internal" href="community.html">社区</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foundation.html">以太坊基金会（The Ethereum Foundation）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributors.html">撰稿人（Contributors）</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ethereum-clients/index.html">以太坊客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../connecting-to-clients/index.html">连接到以太坊客户端</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../account-management.html">账户管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ether.html">以太币</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">以太坊网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mining.html">挖矿</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contracts-and-transactions/index.html">合约和交易</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frequently-asked-questions/frequently-asked-questions.html">常见问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">术语表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">Homestead文档计划</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">以太坊Homestead文档</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">引言</a> &raquo;</li>
+        
+      <li>Web 3.0：一个去中心化应用的平台</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/introduction/web3.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="web-3-0">
+<h1>Web 3.0：一个去中心化应用的平台<a class="headerlink" href="#web-3-0" title="Permalink to this headline">¶</a></h1>
+<p>Web 3.0，指的是一个像DNS、数字身份标识之类的核心互联网服务已经去中心化的、使人们可以通过与他人进行经济上的交往而紧密的结合起来的，新一代的互联网。而越来越多的事实使我们相信，像以太坊这样开放的、去信任的区块链平台，已经可以完美的适合作为去中心化的安全互联网，Web 3.0，的共享“后端”支撑平台了。</p>
+<p>就像以太坊的开发者设想的那样，以太坊是一个空白的画布，可以使你用它创造任何你想要的东西。以太坊协议是抽象设计的，以便使核心特性可以随意的进行组合。 理论上讲，以太坊上的去中心化应用（dapp）项目，将借助以太坊区块链去创造那些先前不可能实现的、基于去中心化共识的新产品或服务。</p>
+<p>也许对以太坊最合适的描述是将其视为一个生态系统：由各种各样的基础设施、代码和社区所共同支持的核心协议构成了以太坊项目。以太坊也可以被理解为使用它的那些项目的集合。 现在，像Augur、Digix、Maker和其他很多（参考 <a class="reference internal" href="../contracts-and-transactions/developer-tools.html#dapps"><span class="std std-ref">Dapps</span></a>）备受瞩目的项目已经在以太坊上构建了起来。另外还有很多开发团队也已经创建了很多开源组件供人们使用。尽管这些组织是独立于以太坊基金会之外的、都有他们自己的目标，但他们毫无疑问的都已经从以太坊的生态系统中获益了。</p>
+<p>进一步了解：</p>
+<ul class="simple">
+<li>Vitalik Buterin - TNABC 2015: <a class="reference external" href="https://www.youtube.com/watch?v=Fjhe0MVRHO4">https://www.youtube.com/watch?v=Fjhe0MVRHO4</a></li>
+<li>Gavin Wood - DEVCON 1 - Ethereum for Dummies: <a class="reference external" href="https://www.youtube.com/watch?v=U_LK0t_qaPo">https://www.youtube.com/watch?v=U_LK0t_qaPo</a></li>
+<li>Ethereum London Meetup (best detailed here): <a class="reference external" href="https://www.youtube.com/watch?v=GJGIeSCgskc">https://www.youtube.com/watch?v=GJGIeSCgskc</a></li>
+</ul>
+<div class="section" id="id1">
+<h2>智能合约<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>来自Alex：</p>
+<p>你会加入某个陌生人的合约么？你会同意把钱借给埃塞俄比亚的某个农场主么？你会成为战乱地区的小众报纸的投资人么？你会花费精力写一个合法绑定的合约在互联网上申请5美元么？</p>
+<p>回答显然是：不。其原因也很简单：一个合约，需要很多的基础设施来支撑。有时需要合约双方有互信的联系，有时需要依赖于一个合法的系统，乃至警察、律师的介入。</p>
+<p>在以太坊中，你不再需要那么多其他的支持。如果合约中的所有要素都能被放到区块链中，那么他们就将进入一个去信任的环境，也将几乎不会花费任何成本。</p>
+<p>原先那些不计其数的小型合约，因为没有经济上的可行性或者没有足够的法律保护，而使我们永远不能接受，现在它们有了实现的可能。但这并不是说要去考虑将我们现有的合约全都迁移到区块链上。</p>
+</div>
+<div class="section" id="dao-decentralized-autonomous-organizations">
+<h2>DAO（Decentralized Autonomous Organizations，即去中心化自治组织，译者注）<a class="headerlink" href="#dao-decentralized-autonomous-organizations" title="Permalink to this headline">¶</a></h2>
+<p>这里正好有个例子：想象你和你的朋友们共同拥有一个小业务。雇佣律师和会计师是很昂贵的，但信任一个单独的合伙人来监督账簿也是个令人紧张的因素（有时甚至是给别有用心的人提供机会）。严格的遵从一个系统，是比信任一个合伙人对账簿的监管更值得尝试的；然而，当系统中的协议没有被正确遵守的时候，就有了一种变相欺诈的倾向。</p>
+<p>这时，使用一个由你的公司掌握的智能合约来解释所有资金的支出，就成为了一个很好的开端。这个智能合约可以被设定为仅当取得其大多数所有者的同意才能被支出。像这样的智能合约可以通过开源软件的方式轻易地获得，你甚至不需要去雇佣你自己的程序员去代替会计师或律师。</p>
+<p>像这样的智能合约是可以直接度量的。几个年轻人可以透明的分配从他们经营的水吧中获得的收入；就像一个主权财富基金为其有资格的上亿成员发放资金一样透明。在这两种情况下，这种透明化的成本都不足1%。</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="history-of-ethereum.html" class="btn btn-neutral float-right" title="以太坊的历史" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="the-homestead-release.html" class="btn btn-neutral" title="Homestead版本" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Ethereum community.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
